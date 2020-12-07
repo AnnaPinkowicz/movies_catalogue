@@ -20,7 +20,7 @@ def test_get_movie_images(monkeypatch):
    mock_image = ["Image"]
    requests_mock = Mock()
    response = requests_mock.return_value
-   response.json.return_value = mock_cast # tutaj jest zle ale nie wiem jak poprawic
+   response.json.return_value = mock_image # tutaj jest zle ale nie wiem jak poprawic
    monkeypatch.setattr("tmdb_client.requests.get", requests_mock)
    movie_cast = tmdb_client.get_movie_images()
    assert movie_image == mock_image
